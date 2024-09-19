@@ -7,6 +7,12 @@ const RichTextRenderer = ({ content }) => {
   const editor = React.useMemo(() => withReact(createEditor()), []);
   const renderElement = ({ attributes, children, element }) => {
     switch (element.type) {
+      case "h2":
+        return (
+          <h2 className="mb-10" {...attributes}>
+            {children}
+          </h2>
+        );
       case "h3":
         return <h3 {...attributes}>{children}</h3>;
       case "h4":
@@ -25,7 +31,11 @@ const RichTextRenderer = ({ content }) => {
           />
         );
       default:
-        return <p {...attributes}>{children}</p>;
+        return (
+          <p className="!text-xl !font-normal mb-5" {...attributes}>
+            {children}
+          </p>
+        );
     }
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import CustomImage from "./image";
 import Link from "next/link";
+import Image from "next/legacy/image";
 
 const Footer = ({ data }) => {
   return (
@@ -28,7 +29,11 @@ const Footer = ({ data }) => {
             <div className="flex flex-col gap-2">
               {data?.socialLinks?.map((ls) => (
                 <Link target="_blank" href={ls?.href || ls?.herf || "#"}>
-                  <CustomImage src={ls?.icon?.url} width={30} height={30} />
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${ls?.icon?.url}`}
+                    width={30}
+                    height={30}
+                  />
                 </Link>
               ))}
             </div>

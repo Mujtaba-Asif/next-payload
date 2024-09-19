@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const payloadClient = axios.create({
-  baseURL: `https://payload-cms-23760da.payloadcms.app/api`,
+  baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`,
   headers: {
     Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzZlNDIwNDE2OTA0ZjlmZjllMjBhYSIsImNvbGxlY3Rpb24iOiJ1c2VycyIsImVtYWlsIjoibXVqdGFiYUBlYXJseWJpcmRsYWJzLmlvIiwiaWF0IjoxNzI0MzE4NjczLCJleHAiOjE3MjQzMjU4NzN9.vBGga8kmPc2OtVVzhA4lezUkwu98qzDFssREhWw2XT0`,
   },

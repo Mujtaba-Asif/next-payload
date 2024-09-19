@@ -20,7 +20,3 @@ h5 {
 .content ul li {
   @apply mb-2;
 }
-
-.content p {
-  @apply mb-5;
-}
