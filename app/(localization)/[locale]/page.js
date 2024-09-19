@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   return [{ params: { locale: "en" } }, { params: { locale: "fr" } }];
 }
+//
 
 export default async function Home({ params }) {
   const { locale } = params;
